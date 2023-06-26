@@ -12,6 +12,9 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
+	int j = 0;
+	int k = 0;
+	
 
 	va_list(ap);
 	va_start(ap, format);
@@ -24,10 +27,11 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					_putchar(va_arg(ap, int));
+					 _putchar(va_arg(ap, int));
+					 k++;
 					break;
 				case 's':
-					_putstr(va_arg(ap, char *));
+					j = _putstr(va_arg(ap, char *));
 					break;
 				case '%':
 					_putchar('%');
@@ -41,5 +45,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	return (i);
+	return (k + j);
 }
