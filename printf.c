@@ -31,8 +31,12 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
+		else
+		{
+			_putchar(format[i]);
+		}
 		i++;
 	}
 	va_end(ap);
-	return (0);
+	return (i);
 }
