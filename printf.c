@@ -29,6 +29,9 @@ int _printf(const char *format, ...)
 				case 's':
 					_putstr(va_arg(ap, char *));
 					break;
+				case '%':
+					_putchar('%');
+					break;
 			}
 		}
 		else
