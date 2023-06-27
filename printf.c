@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int j = 0;
 	int k = 0;
+	int l = 0;
 
 	va_list(ap);
 	va_start(ap, format);
@@ -36,6 +37,10 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					k++;
 					break;
+				case 'd':
+				case 'i':
+					l = _putdigit(va_arg(ap, int));
+					break;
 			}
 		}
 		else
@@ -46,5 +51,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	return (k + j);
+	return (k + j + l);
 }

@@ -32,3 +32,24 @@ int _putstr(char *s)
 
 	return (i);
 }
+
+
+/**
+ * _putdigit - prints a digits to stdout
+ * @d: Number to be printed
+ * Return: digit count
+ *
+ */
+
+int _putdigit(int d)
+{
+	int i = 0;
+
+	if (d == 0)
+		return (0);
+
+	i = _putdigit(d / 10);
+	_putchar('0' + (d % 10));
+
+	return (i + 1);
+}
