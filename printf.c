@@ -41,6 +41,11 @@ int _printf(const char *format, ...)
 				case 'i':
 					l = _putdigit(va_arg(ap, int));
 					break;
+				default:
+					_putchar('%');
+					k++;
+					_putchar(format[i]);
+					k++;
 			}
 		}
 		else
