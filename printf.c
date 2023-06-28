@@ -43,6 +43,8 @@ int _printf(const char *format, ...)
 				case 'i':
 					l = _putdigit(va_arg(ap, int));
 					break;
+				case '\0':
+					return (-1);
 				default:
 					_putchar('%');
 					k++;
