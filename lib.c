@@ -49,7 +49,14 @@ int _putstr(char *s)
 
 int _putdigit(int d)
 {
-	int i = 0;
+	int i, n = 0;
+
+	 if (d < 0)
+        {
+            putchar('-');
+            d *= -1;
+            n = 1;
+        }
 
 	if (d == 0)
 		return (0);
