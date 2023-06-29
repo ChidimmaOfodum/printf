@@ -22,11 +22,13 @@ int _putchar(char c)
 
 int _putstr(char *s)
 {
+	char buffer[1024];
 	int i = 0;
 
 	while (s[i] != '\0')
 	{
-		_putchar(s[i]);
+		buffer[i] = s[i];
+		_putchar(buffer[i]);
 		i++;
 	}
 
