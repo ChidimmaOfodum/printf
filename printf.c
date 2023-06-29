@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "main.h"
+int _printf(const char *format, ...);
 
 /**
  * _printf - a custom printf function
@@ -29,14 +30,13 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					 k +=_putchar(va_arg(ap, int));
+					 k += _putchar(va_arg(ap, int));
 					break;
 				case 's':
 					 j += _putstr(va_arg(ap, char *));
 					break;
 				case '%':
-					k+=_putchar('%');
-					
+					k += _putchar('%');
 					break;
 				case 'd':
 				case 'i':
