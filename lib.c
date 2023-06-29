@@ -42,27 +42,27 @@ int _putstr(char *s)
 
 /**
  * _putdigit - prints a digits to stdout
- * @d: Number to be printed
+ * @n: Number to be printed
  * Return: digit count
  *
  */
 
-int _putdigit(int d)
+int _putdigit(int n)
 {
-	int i, n = 0;
+	unsigned int x;
+	int i = 0;
 
-	 if (d < 0)
-        {
-            _putchar('-');
-            d *= -1;
-            n = 1;
-        }
+	x = n;
+	if (n < 0)
+	{
+		_putchar(45);
+		x = -n;
+		i++;
+	}
+	if (x / 10)
+		i += _putdigit(x / 10);
+	_putchar((x % 10) + '0');
+	i++;
 
-	if (d == 0)
-		return (0);
-
-	i = _putdigit(d / 10);
-	_putchar('0' + (d % 10));
-
-	return (i + 1 + n);
+	return (i);
 }
