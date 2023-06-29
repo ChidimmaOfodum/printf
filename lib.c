@@ -13,7 +13,7 @@ int _putchar(char c)
 
 	buffer[0] = c;
 	write(1, &buffer[0], 1);
-	return (0);
+	return (1);
 }
 
 /**

@@ -29,15 +29,14 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					 _putchar(va_arg(ap, int));
-					 k++;
+					 k +=_putchar(va_arg(ap, int));
 					break;
 				case 's':
-					 j = _putstr(va_arg(ap, char *));
+					 j += _putstr(va_arg(ap, char *));
 					break;
 				case '%':
-					_putchar('%');
-					k++;
+					k+=_putchar('%');
+					
 					break;
 				case 'd':
 				case 'i':
