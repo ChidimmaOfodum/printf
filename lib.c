@@ -9,7 +9,10 @@
  */
 int _putchar(char c)
 {
-	write(1, &c, 1);
+	char buffer[1024];
+
+	buffer[0] = c;
+	write(1, &buffer[0], 1);
 	return (0);
 }
 
@@ -22,13 +25,11 @@ int _putchar(char c)
 
 int _putstr(char *s)
 {
-	char buffer[1024];
 	int i = 0;
 
 	while (s[i] != '\0')
 	{
-		buffer[i] = s[i];
-		_putchar(buffer[i]);
+		_putchar(s[i]);
 		i++;
 	}
 
