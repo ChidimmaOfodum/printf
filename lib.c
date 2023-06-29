@@ -53,7 +53,7 @@ int _putdigit(int d)
 
 	 if (d < 0)
         {
-            putchar('-');
+            _putchar('-');
             d *= -1;
             n = 1;
         }
@@ -64,5 +64,5 @@ int _putdigit(int d)
 	i = _putdigit(d / 10);
 	_putchar('0' + (d % 10));
 
-	return (i + 1);
+	return (i + 1 + n);
 }
